@@ -11,7 +11,7 @@ models:
         meta:
           primary-key: true
           dimension:
-            sql: ${TABLE}."brewery_id"
+            sql: ${TABLE}.brewery_id
           meta:
           metrics:
             num_unique_breweries: # name of your metric
@@ -24,7 +24,7 @@ models:
         meta:
           primary-key: true
           dimension:
-            sql: ${TABLE}."beer_id"
+            sql: ${TABLE}.beer_id
       - name: beer_name
         description: The name of the beer
         meta:
@@ -33,7 +33,7 @@ models:
         description: Style of the beer (IPA, Porter, etc)
         meta:
           dimension:
-            sql: '${TABLE}."beer_style"'
+            sql: ${TABLE}.beer_style
           metrics:
             num_unique_beer_styles: # name of your metric
               type: count_distinct # metric type
@@ -66,7 +66,7 @@ models:
         meta:
           primary-key: true
           dimension:
-            sql: ${TABLE}."beer_id"
+            sql: ${TABLE}.beer_id
         description: The unique indentifier of the beer
 
       - name: beer_name
@@ -79,7 +79,7 @@ models:
         description: The style of the beer (IPA, Porter, etc)
         meta:
           dimension:
-            sql: ${TABLE}."beer_style" 
+            sql: ${TABLE}.beer_style
 
       - name: abv
         description: Alcohol by volume
