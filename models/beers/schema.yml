@@ -73,7 +73,7 @@ models:
         description: The name of the beer as on the label
         meta:
           dimension:
-            sql: ${TABLE}."beer_name"
+            sql: ${TABLE}.beer_name
 
       - name: beer_style
         description: The style of the beer (IPA, Porter, etc)
