@@ -1,0 +1,165 @@
+version: 2
+
+models:
+  - name: beers_with_breweries
+    description: Beers joined with their breweries
+    columns:
+      - name: brewery_id
+        description: "The unique identifier for the brewery"
+        tests:
+          - not_null
+        meta:
+          primary-key: true
+      - name: beer_id
+        tests:
+          - unique
+          - not_null
+        meta:
+          primary-key: true
+      - name: beer_name
+        description: The name of the beer
+        meta:
+          primary-key: true
+      - name: beer_style
+        description: Style of the beer (IPA, Porter, etc)
+      - name: abv
+        description: Alcohol percentage in the beer
+      - name: ibu
+        description: The bitterness of the beer in IBUs
+      - name: bitterness
+        description: The bitterness category of the beer (based on IBUs)
+      - name: ounces
+        description: The volume of the beer
+      - name: brewery_name
+        description: Name of the brewery
+      - name: brewery_city
+        description: City of the brewery
+      - name: brewery_state
+        description: State of the brewery
+
+  - name: beers
+    description: Beers description
+    tags: 
+      - products
+      - sales
+
+    columns:
+      - name: beer_id
+        tests:
+          - unique
+          - not_null
+        meta:
+          primary-key: true
+         
+      - name: beer_id
+        description: The unique indentifier of the beer
+
+      - name: beer_name
+        description: The name of the beer as on the label
+
+      - name: beer_style
+        description: The style of the beer (IPA, Porter, etc) 
+
+      - name: abv
+        description: Alcohol by volume
+
+      - name: ibu
+        description: Bitterness in International Bitterness Units
+
+      - name: bitterness
+        description: The bitterness category of the beer (based on IBUs)
+
+      - name: brewery_id
+        description: The unique indentifier of the beer
+      
+      - name: ounces
+        description: Volume of a single unit
+
+
+  - name: breweries
+    columns:
+      - name: brewery_id
+        meta:
+         primary-key: true
+
+  - name: orders
+    columns:
+      - name: order_no
+        meta:
+         primary-key: true
+
+  - name: order_lines
+    columns:
+      - name: order_no
+        meta:
+         primary-key: true
+        tests:
+          - relationships:
+              to: ref('orders')
+              field: order_no
+
+      - name: order_line
+        meta:
+         primary-key: true
+        tests:
+          - unique
+
+  - name: sales
+    tags:
+      - finance
+    meta:
+      owner: fokko@datafold.com
+    columns:
+      - name: beer_id
+        description: The unique indentifier of the beer
+      - name: beer_name
+        description: The name of the beer as on the label
+      - name: beer_style
+        description: The style of the beer (IPA, Porter, etc)
+      - name: abv
+        description: Alcohol by volume
+      - name: ibu
+        description: International Bitterness Unit
+      - name: bitterness
+        description: The bitterness category of the beer (based on IBUs)
+      - name: ounces
+        description: Volume of a single unit
+      - name: brewery_id
+        description: The unique indentifier of the brewery
+      - name: brewery_name
+        description: The official name of the brewery
+      - name: brewery_city
+      - name: brewery_state
+      - name: brewery_country
+      - name: order_no
+        description: The order number
+        tests:
+          - not_null
+        tags:
+          - primary-key
+      - name: order_line
+        description: The order line number
+        tests:
+          - not_null
+        tags:
+          - primary-key
+      - name: order_created_at
+        description: When the order was created
+      - name: order_li_quantity
+        description: The number of units for the order line
+      - name: order_li_price_each
+        description: Price for a single unit
+      - name: order_li_price_total
+        description: The total price for the order line
+
+  - name: promo_deliveries
+    tags:
+      - marketing
+    meta:
+      owner: gleb@datafold.com
+    columns:
+      - name: customer_id
+        description: Customer id
+        meta: 
+          primary-key: true
+
