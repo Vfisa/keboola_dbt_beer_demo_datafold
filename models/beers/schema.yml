@@ -67,6 +67,9 @@ models:
           primary-key: true
           dimension:
             sql: ${TABLE}.beer_id
+          metrics:
+            num_unique_beers: # name of your metric
+              type: count_distinct # metric type
         description: The unique indentifier of the beer
 
       - name: beer_name
@@ -80,6 +83,9 @@ models:
         meta:
           dimension:
             sql: ${TABLE}.beer_style
+          metrics:
+            num_unique_beer_styles: # name of your metric
+              type: count_distinct
 
       - name: abv
         description: Alcohol by volume
@@ -102,7 +108,10 @@ models:
             sql: ${TABLE}.bitterness
 
       - name: brewery_id
-        description: The unique indentifier of the beer
+        description: The unique indentifier of the brewery
+        metrics:
+            num_unique_breweries: # name of your metric
+              type: count_distinct
       
       - name: ounces
         description: Volume of a single unit
