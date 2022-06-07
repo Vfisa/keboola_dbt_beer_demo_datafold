@@ -66,20 +66,20 @@ models:
         meta:
           primary-key: true
           dimension:
-            sql: '${TABLE}."beer_id"'
+            sql: ${TABLE}."beer_id"
         description: The unique indentifier of the beer
 
       - name: beer_name
         description: The name of the beer as on the label
         meta:
           dimension:
-            sql: '${TABLE}."beer_name"'
+            sql: ${TABLE}."beer_name"
 
       - name: beer_style
         description: The style of the beer (IPA, Porter, etc)
         meta:
           dimension:
-            sql: '${TABLE}."beer_style"' 
+            sql: ${TABLE}."beer_style" 
 
       - name: abv
         description: Alcohol by volume
