@@ -65,28 +65,52 @@ models:
           - not_null
         meta:
           primary-key: true
+          dimension:
+            sql: '${TABLE}."beer_id"'
         description: The unique indentifier of the beer
 
       - name: beer_name
         description: The name of the beer as on the label
+        meta:
+          dimension:
+            sql: '${TABLE}."beer_name"'
 
       - name: beer_style
-        description: The style of the beer (IPA, Porter, etc) 
+        description: The style of the beer (IPA, Porter, etc)
+        meta:
+          dimension:
+            sql: '${TABLE}."beer_style"' 
 
       - name: abv
         description: Alcohol by volume
+        meta:
+          metrics:
+            avg_abv:
+              type: average
 
       - name: ibu
         description: Bitterness in International Bitterness Units
+                meta:
+          metrics:
+            avg_ibu:
+              type: average
 
       - name: bitterness
         description: The bitterness category of the beer (based on IBUs)
+        meta:
+          metrics:
+            avg_bitterness:
+              type: average
 
       - name: brewery_id
         description: The unique indentifier of the beer
       
       - name: ounces
         description: Volume of a single unit
+        meta:
+          metrics:
+            avg_ounces:
+              type: average
 
 
   - name: breweries
