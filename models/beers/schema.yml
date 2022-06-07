@@ -2,7 +2,11 @@ version: 2
 
 models:
   - name: beers_with_breweries
-    description: Beers joined with their breweries
+    tags:
+      - operations
+    meta:
+      owner: fisa@keboola.com
+    description: "Beers joined with their breweries"
     columns:
       - name: brewery_id
         description: "The unique identifier for the brewery"
@@ -53,11 +57,15 @@ models:
         description: State of the brewery
 
   - name: beers
-    description: Beers description
+    tags:
+      - operations
+    meta:
+      owner: fisa@keboola.com
+    description: "Beer List"
     tags: 
       - products
       - sales
-
+      - ecommerce
     columns:
       - name: beer_id
         tests:
@@ -128,18 +136,36 @@ models:
 
 
   - name: breweries
+    tags:
+      - operations
+    meta:
+      owner: fisa@keboola.com
     columns:
       - name: brewery_id
         meta:
          primary-key: true
+         metrics:
+            num_unique_breweries: # name of your metric
+              type: count_distinct # metric type
 
   - name: orders
+    tags:
+      - ecommerce
+    meta:
+      owner: jordan.burger@keboola.com
     columns:
       - name: order_no
         meta:
          primary-key: true
+         metrics:
+            num_unique_orders: # name of your metric
+              type: count_distinct # metric type
 
   - name: order_lines
+    tags:
+      - ecommerce
+    meta:
+      owner: jordan.burger@keboola.com
     columns:
       - name: order_no
         meta:
@@ -159,7 +185,8 @@ models:
     tags:
       - finance
     meta:
-      owner: fokko@datafold.com
+      owner: fisa@keboola.com
+    description: "Beer Sales"
     columns:
       - name: beer_id
         description: The unique indentifier of the beer
@@ -207,10 +234,10 @@ models:
     tags:
       - marketing
     meta:
-      owner: gleb@datafold.com
+      owner: david.pospisil@keboola.com
     columns:
       - name: customer_id
-        description: Customer id
+        description: "Customer id"
         meta: 
           primary-key: true
 
