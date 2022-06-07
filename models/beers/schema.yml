@@ -31,6 +31,12 @@ models:
           primary-key: true
       - name: beer_style
         description: Style of the beer (IPA, Porter, etc)
+        meta:
+          dimension:
+            sql: '${TABLE}."beer_style"'
+          metrics:
+            num_unique_beer_styles: # name of your metric
+              type: count_distinct # metric type
       - name: abv
         description: Alcohol percentage in the beer
       - name: ibu
@@ -59,8 +65,6 @@ models:
           - not_null
         meta:
           primary-key: true
-         
-      - name: beer_id
         description: The unique indentifier of the beer
 
       - name: beer_name
