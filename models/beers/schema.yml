@@ -98,9 +98,8 @@ models:
       - name: bitterness
         description: The bitterness category of the beer (based on IBUs)
         meta:
-          metrics:
-            avg_bitterness:
-              type: average
+          dimension:
+            sql: ${TABLE}.bitterness
 
       - name: brewery_id
         description: The unique indentifier of the beer
