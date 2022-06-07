@@ -86,6 +86,7 @@ models:
           metrics:
             num_unique_beer_styles: # name of your metric
               type: count_distinct
+              description: "Distinct Beer Styles"
 
       - name: abv
         description: Alcohol by volume
@@ -93,6 +94,7 @@ models:
           metrics:
             avg_abv:
               type: average
+              description: "Average Alcohol by volume"
 
       - name: ibu
         description: Bitterness in International Bitterness Units
@@ -100,18 +102,21 @@ models:
           metrics:
             avg_ibu:
               type: average
+              description: "Average Bitterness in International Bitterness Units"
 
       - name: bitterness
         description: The bitterness category of the beer (based on IBUs)
         meta:
           dimension:
             sql: ${TABLE}.bitterness
+            description: "Bitterness Types"
 
       - name: brewery_id
         description: The unique indentifier of the brewery
         metrics:
             num_unique_breweries: # name of your metric
               type: count_distinct
+              description: "Distinct Number of Breweries"
       
       - name: ounces
         description: Volume of a single unit
@@ -119,6 +124,7 @@ models:
           metrics:
             avg_ounces:
               type: average
+              description: "Average Volume of a single unit"
 
 
   - name: breweries
