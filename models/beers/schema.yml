@@ -90,7 +90,7 @@ models:
 
       - name: ibu
         description: Bitterness in International Bitterness Units
-                meta:
+        meta:
           metrics:
             avg_ibu:
               type: average
