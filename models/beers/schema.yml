@@ -12,6 +12,10 @@ models:
           primary-key: true
           dimension:
             sql: ${TABLE}."brewery_id"
+          meta:
+          metrics:
+            num_unique_breweries: # name of your metric
+              type: count_distinct # metric type
       - name: beer_id
         description: "The unique identifier for the beer"
         tests:
