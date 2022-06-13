@@ -1,0 +1,52 @@
+version: 2
+
+sources:
+  - name: WORKSPACE_863912091
+    freshness: # default freshness
+      warn_after: {count: 7, period: day}
+      error_after: {count: 30, period: day}
+    loaded_at_field: "_timestamp"
+    tables:
+      - name: beers
+        description: "list of beers"
+#        meta: {<dictionary>}
+        identifier: "seed_beers"
+#        tests:
+#          - <test>
+#          - ... # declare additional tests
+        tags: ["beers", "beers", "ecommerce"]
+
+        quoting:
+          database: true
+          schema: true
+          identifier: true
+        columns:
+          - name: '"id"'
+            tests:
+              - unique
+              - not_null
+          - name: '"name"'
+            tests:
+              - not_null
+          - name: '"style"'
+          - name: '"abv"'
+          - name: '"ibu"'
+          - name: '"brewery_id"'
+            tests:
+              - not_null
+          - name: '"ounces"'
+          - name: '"_timestamp"'
+
+      - name: breweries
+        description: "list of breweries"
+#        meta: {<dictionary>}
+        identifier: "seed_breweries"
+#        tests:
+#          - <test>
+#          - ... # declare additional tests
+        tags: ["breweries", "brewery", "ecommerce"]
+
+        quoting:
+          database: true
+          schema: true
+          identifier: true

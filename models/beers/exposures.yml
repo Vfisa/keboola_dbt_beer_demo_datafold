@@ -1,0 +1,23 @@
+version: 2
+
+exposures:
+  - name: lightdash
+    description: "Lightdash Demo Instance"
+    type: "dashboard"
+    url: "https://fisa-lightdash.herokuapp.com/projects/b2e4799b-db5e-4e72-a483-fded20d227a9/"
+    maturity: high
+    tags: ["business_intelligence"]
+    owner:
+      name: Martin Fiser
+      email: fisa@keboola.com
+    
+    depends_on:
+      - ref('beers')
+      - ref('beers_with_breweries')
+      - ref('breweries')
+      - ref('order_lines')
+      - ref('orders')
+      - ref('promo_deliveries')
+      - ref('sales')
+#      - source('seed_beers', ) - source('name', 'table')
+#      - source('seed_breweries') - source('name', 'table')

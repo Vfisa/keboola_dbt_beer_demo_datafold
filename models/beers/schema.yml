@@ -215,12 +215,16 @@ models:
           - not_null
         tags:
           - primary-key
+        meta:
+         primary-key: true
       - name: order_line
         description: The order line number
         tests:
           - not_null
         tags:
           - primary-key
+        meta:
+         primary-key: true
       - name: order_created_at
         description: When the order was created
       - name: order_li_quantity
@@ -240,4 +244,6 @@ models:
         description: "Customer id"
         meta: 
           primary-key: true
+        tags:
+          - primary-key
 
