@@ -169,7 +169,7 @@ models:
     columns:
       - name: order_no
         meta:
-         primary-key: true
+          primary-key: true
         tests:
           - relationships:
               to: ref('orders')
@@ -177,7 +177,7 @@ models:
 
       - name: order_line
         meta:
-         primary-key: true
+          primary-key: true
         tests:
           - unique
 
@@ -216,7 +216,7 @@ models:
         tags:
           - primary-key
         meta:
-         primary-key: true
+          primary-key: true
       - name: order_line
         description: The order line number
         tests:
@@ -224,7 +224,7 @@ models:
         tags:
           - primary-key
         meta:
-         primary-key: true
+          primary-key: true
       - name: order_created_at
         description: When the order was created
       - name: order_li_quantity

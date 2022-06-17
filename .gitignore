@@ -5,3 +5,5 @@ dbt_packages/
 logs/
 .idea/
 /.user.yml
+.DS_Store
+.DS_Store
