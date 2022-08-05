@@ -31,13 +31,13 @@ quoting:
   identifier: true
 
 
-seeds:
-  beer_analytics:
-    +enabled: true
-    seed_beers:
-      +column_types:
-        ibu: decimal
-        abv: decimal
+#seeds:
+#  beer_analytics:
+#    +enabled: true
+#    seed_beers:
+#      +column_types:
+#        ibu: decimal
+#        abv: decimal
 
 
 # Configuring models
