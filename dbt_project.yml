@@ -2,9 +2,12 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
+
 name: 'beer_analytics'
 version: '1.0.0'
 config-version: 2
+
+
 
 # This setting configures which "profile" dbt uses for this project.
 profile: beer_analytics
@@ -24,6 +27,7 @@ clean-targets:         # directories to be removed by `dbt clean`
     - "target"
     - "dbt_modules"
 
+
 # https://docs.getdbt.com/reference/project-configs/quoting
 quoting:
   database: true
@@ -31,6 +35,12 @@ quoting:
   identifier: true
 
 
+#sources:
+#  freshness: # default freshness
+#    warn_after: {count: 1, period: day}
+#    error_after: {count: 7, period: day}
+
+# Seeds are handled by Keboola platform (uploaded files)
 #seeds:
 #  beer_analytics:
 #    +enabled: true

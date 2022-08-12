@@ -1,0 +1,39 @@
+version: 2
+sources:
+    -
+        name: in.c-dbt_beer_seed
+        database: '{{ env_var("DBT_KBC_DEV_DBT_BEER_DATABASE") }}'
+        schema: in.c-dbt_beer_seed
+        loaded_at_field: '"_timestamp"'
+        freshness: # default freshness
+            warn_after: {count: 1, period: day}
+            error_after: {count: 7, period: day}
+            # Apply a where clause in the freshness query
+            #filter: datediff('day', "_timestamp", current_timestamp) < 3
+
+        
+        tables:
+            -
+                name: seed_beers
+                quoting:
+                    database: true
+                    schema: true
+                    identifier: true
+                columns:
+                    -
+                        name: '"id"'
+                        tests:
+                            - unique
+                            - not_null
+            -
+                name: seed_breweries
+                quoting:
+                    database: true
+                    schema: true
+                    identifier: true
+                columns:
+                    -
+                        name: '"id"'
+                        tests:
+                            - unique
+                            - not_null
