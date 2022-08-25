@@ -7,3 +7,5 @@ logs/
 /.user.yml
 .DS_Store
 .DS_Store
+analysis
+.DS_Store

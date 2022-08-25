@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: WORKSPACE_863912091
+  - name: in.c-dbt_beer_seed
 
     freshness:
       warn_after:
