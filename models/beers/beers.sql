@@ -1,4 +1,3 @@
-
 {{ config(
     materialized="table"
 ) }}
@@ -16,4 +15,4 @@ SELECT
   "brewery_id"    AS brewery_id,
   "ounces"        AS ounces
 FROM
-   {{ source('in.c-dbt_beer_seed', 'seed_beers') }}
+  {{ source('in.c-dbt_beer_seed', 'beers') }}
