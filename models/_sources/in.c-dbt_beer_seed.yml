@@ -1,0 +1,36 @@
+version: 2
+sources:
+    -
+        name: in.c-dbt_beer_seed
+        freshness:
+            warn_after:
+                count: 1
+                period: day
+        database: '{{ env_var("DBT_KBC_DEV_DBT_BEER_DATABASE") }}'
+        schema: in.c-dbt_beer_seed
+        loaded_at_field: '"_timestamp"'
+        tables:
+            -
+                name: seed_beers
+                quoting:
+                    database: true
+                    schema: true
+                    identifier: true
+                columns:
+                    -
+                        name: '"id"'
+                        tests:
+                            - unique
+                            - not_null
+            -
+                name: seed_breweries
+                quoting:
+                    database: true
+                    schema: true
+                    identifier: true
+                columns:
+                    -
+                        name: '"id"'
+                        tests:
+                            - unique
+                            - not_null
