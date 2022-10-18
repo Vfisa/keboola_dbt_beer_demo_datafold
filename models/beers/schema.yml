@@ -4,8 +4,6 @@ models:
   - name: beers_with_breweries
     tags:
       - operations
-    docs:
-      node_color: "orange"
     meta:
       owner: fisa@keboola.com
     description: "Beers joined with their breweries"
@@ -61,8 +59,6 @@ models:
   - name: beers
     tags:
       - operations
-    docs:
-      node_color: "gray"
     meta:
       owner: fisa@keboola.com
     description: "Beer List"
@@ -142,8 +138,6 @@ models:
   - name: breweries
     tags:
       - operations
-    docs:
-      node_color: "gray"
     meta:
       owner: fisa@keboola.com
     columns:
@@ -155,8 +149,6 @@ models:
               type: count_distinct # metric type
 
   - name: orders
-    docs:
-      node_color: "orange"
     tags:
       - ecommerce
     meta:
@@ -172,8 +164,6 @@ models:
   - name: order_lines
     tags:
       - ecommerce
-    docs:
-      node_color: "orange"
     meta:
       owner: jordan.burger@keboola.com
     columns:
@@ -194,8 +184,6 @@ models:
   - name: sales
     tags:
       - finance
-    docs:
-      node_color: "gold"
     meta:
       owner: fisa@keboola.com
     description: "Beer Sales"
@@ -249,8 +237,6 @@ models:
   - name: promo_deliveries
     tags:
       - marketing
-    docs:
-      node_color: "gold"
     meta:
       owner: david.pospisil@keboola.com
     columns:
