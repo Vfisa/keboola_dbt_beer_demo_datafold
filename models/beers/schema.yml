@@ -61,7 +61,12 @@ models:
       - operations
     meta:
       owner: fisa@keboola.com
-    description: "Beer List"
+    description:  |
+      Beer List.
+      
+      `dbt-profiler` results:
+
+      {{ doc("dbt_profiler__beers") }}
     tags: 
       - products
       - sales
