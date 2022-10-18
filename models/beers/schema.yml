@@ -246,3 +246,4 @@ models:
           primary-key: true
         tags:
           - primary-key
+
