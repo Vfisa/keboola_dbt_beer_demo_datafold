@@ -10,13 +10,12 @@ exposures:
     owner:
       name: Fisa
       email: fisa@keboola.com
-    
     depends_on:
       - ref('promo_deliveries')
       - ref('sales')
 
-  - name: "PostgreSQL - PostgreSQL datastore (Sales Data Output) - order_lines"
-    description: "PostgreSQL - PostgreSQL datastore (Sales Data Output) - order_lines"
+  - name: "PostgreSQL - PostgreSQL datastore (Sales Data Output) - order_lines"
+    description: "PostgreSQL - PostgreSQL datastore (Sales Data Output) - order_lines"
     type: "application"
     url: "https://connection.eu-central-1.keboola.com/admin/projects/3603/components/keboola.wr-db-pgsql/477800155/rows/477800426"
     maturity: high
@@ -24,7 +23,6 @@ exposures:
     owner:
       name: Fisa
       email: fisa@keboola.com
-    
     depends_on:
       - ref('promo_deliveries')
       - ref('sales') 
