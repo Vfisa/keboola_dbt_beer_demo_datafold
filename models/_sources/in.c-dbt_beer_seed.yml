@@ -34,3 +34,5 @@ sources:
                         tests:
                             - unique
                             - not_null
+                            - accepted_values:
+                                values: ['OR','MA','ID','NC','NH','PA','NY','WI','IA','WA','CO','HI','KY','IN','OH','ME','SC','TX','MI','NM','GA','NE','AZ','VA','NJ','RI','FL','MS','DC','AL','MN','LA','TN','AR','ND','CA','VT','MT','MO','WV','CT','OK','KS','AK','UT','IL','DE','NV','SD','WY','MD']
