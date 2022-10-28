@@ -1,7 +1,8 @@
 version: 2
 
 exposures:
-  - name: "Google Sheets - sales info to sheets"
+  - name: "Google Sheets"
+    label: "Google Sheets - sales info to sheets"
     description: "Google Sheets - sales info to sheets"
     type: "application"
     url: "https://connection.eu-central-1.keboola.com/admin/projects/3603/components/keboola.wr-google-sheets/474859513"
@@ -14,7 +15,8 @@ exposures:
       - ref('promo_deliveries')
       - ref('sales')
 
-  - name: "PostgreSQL - PostgreSQL datastore (Sales Data Output) - order_lines"
+  - name: "PostgreSQL"
+    label: "PostgreSQL - PostgreSQL datastore (Sales Data Output) - order_lines"
     description: "PostgreSQL - PostgreSQL datastore (Sales Data Output) - order_lines"
     type: "application"
     url: "https://connection.eu-central-1.keboola.com/admin/projects/3603/components/keboola.wr-db-pgsql/477800155/rows/477800426"
