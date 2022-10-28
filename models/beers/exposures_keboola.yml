@@ -1,7 +1,7 @@
 version: 2
 
 exposures:
-  - name: "Google Sheets"
+  - name: "google_sheets"
 #    label: "Google Sheets - sales info to sheets"
     description: "Google Sheets - sales info to sheets"
     type: "application"
@@ -15,7 +15,7 @@ exposures:
       - ref('promo_deliveries')
       - ref('sales')
 
-  - name: "PostgreSQL"
+  - name: "postgresql"
 #    label: "PostgreSQL - PostgreSQL datastore (Sales Data Output) - order_lines"
     description: "PostgreSQL - PostgreSQL datastore (Sales Data Output) - order_lines"
     type: "application"
