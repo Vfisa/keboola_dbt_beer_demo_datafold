@@ -3,7 +3,7 @@ version: 2
 exposures:
   - name: "google_sheets"
 #    label: "Google Sheets - sales info to sheets"
-    description: "Google Sheets - sales info to sheets"
+    description: "Keboola Google Sheets - sales info to sheets"
     type: "application"
     url: "https://connection.eu-central-1.keboola.com/admin/projects/3603/components/keboola.wr-google-sheets/474859513"
     maturity: high
@@ -17,7 +17,7 @@ exposures:
 
   - name: "postgresql"
 #    label: "PostgreSQL - PostgreSQL datastore (Sales Data Output) - order_lines"
-    description: "PostgreSQL - PostgreSQL datastore (Sales Data Output) - order_lines"
+    description: "Keboola PostgreSQL - PostgreSQL datastore (Sales Data Output) - order_lines"
     type: "application"
     url: "https://connection.eu-central-1.keboola.com/admin/projects/3603/components/keboola.wr-db-pgsql/477800155/rows/477800426"
     maturity: high

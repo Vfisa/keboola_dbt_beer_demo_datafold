@@ -1,31 +1,23 @@
 version: 2
 sources:
-    - name: in.c-dbt_beer_seed
+    - name: in.c-dbt-cloud-job-trigger-474876585
       freshness:
         warn_after:
             count: 1
             period: day
       database: '{{ env_var("DBT_KBC_DBT_BEER_DATABASE") }}'
-      schema: in.c-dbt_beer_seed
+      schema: in.c-dbt-cloud-job-trigger-474876585
       loaded_at_field: '"_timestamp"'
       tables:
-        - name: seed_beers
+        - name: dbt_cloud_run
           quoting:
             database: true
             schema: true
             identifier: true
-          columns:
-            - name: '"id"'
-              tests:
-                - unique
-                - not_null
-        - name: seed_breweries
+          columns: []
+        - name: dbt_cloud_trigger
           quoting:
             database: true
             schema: true
             identifier: true
-          columns:
-            - name: '"id"'
-              tests:
-                - unique
-                - not_null
+          columns: []

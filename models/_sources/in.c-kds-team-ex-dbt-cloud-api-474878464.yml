@@ -1,0 +1,73 @@
+version: 2
+sources:
+    - name: in.c-kds-team-ex-dbt-cloud-api-474878464
+      freshness:
+        warn_after:
+            count: 1
+            period: day
+      database: '{{ env_var("DBT_KBC_DBT_BEER_DATABASE") }}'
+      schema: in.c-kds-team-ex-dbt-cloud-api-474878464
+      loaded_at_field: '"_timestamp"'
+      tables:
+        - name: accounts
+          quoting:
+            database: true
+            schema: true
+            identifier: true
+          columns:
+            - name: '"id"'
+              tests:
+                - unique
+                - not_null
+        - name: jobs
+          quoting:
+            database: true
+            schema: true
+            identifier: true
+          columns:
+            - name: '"account_id"'
+              tests:
+                - unique
+                - not_null
+            - name: '"id"'
+              tests:
+                - unique
+                - not_null
+        - name: projects
+          quoting:
+            database: true
+            schema: true
+            identifier: true
+          columns:
+            - name: '"account_id"'
+              tests:
+                - unique
+                - not_null
+            - name: '"id"'
+              tests:
+                - unique
+                - not_null
+        - name: runs
+          quoting:
+            database: true
+            schema: true
+            identifier: true
+          columns:
+            - name: '"account_id"'
+              tests:
+                - unique
+                - not_null
+            - name: '"id"'
+              tests:
+                - unique
+                - not_null
+        - name: run_artifacts
+          quoting:
+            database: true
+            schema: true
+            identifier: true
+          columns:
+            - name: '"run_id"'
+              tests:
+                - unique
+                - not_null

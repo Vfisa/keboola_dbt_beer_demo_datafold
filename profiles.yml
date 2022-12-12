@@ -4,11 +4,11 @@ config:
 beer_analytics:
     target: dev
     outputs:
-        kbc_dev_dbt_beer:
-            type: '{{ env_var("DBT_KBC_DEV_DBT_BEER_TYPE") }}'
-            user: '{{ env_var("DBT_KBC_DEV_DBT_BEER_USER") }}'
-            password: '{{ env_var("DBT_KBC_DEV_DBT_BEER_PASSWORD") }}'
-            schema: '{{ env_var("DBT_KBC_DEV_DBT_BEER_SCHEMA") }}'
-            warehouse: '{{ env_var("DBT_KBC_DEV_DBT_BEER_WAREHOUSE") }}'
-            database: '{{ env_var("DBT_KBC_DEV_DBT_BEER_DATABASE") }}'
-            account: '{{ env_var("DBT_KBC_DEV_DBT_BEER_ACCOUNT") }}'
+        dbt_beer:
+            type: '{{ env_var("DBT_KBC_DBT_BEER_TYPE") }}'
+            user: '{{ env_var("DBT_KBC_DBT_BEER_USER") }}'
+            password: '{{ env_var("DBT_KBC_DBT_BEER_PASSWORD") }}'
+            schema: '{{ env_var("DBT_KBC_DBT_BEER_SCHEMA") }}'
+            warehouse: '{{ env_var("DBT_KBC_DBT_BEER_WAREHOUSE") }}'
+            database: '{{ env_var("DBT_KBC_DBT_BEER_DATABASE") }}'
+            account: '{{ env_var("DBT_KBC_DBT_BEER_ACCOUNT") }}'
