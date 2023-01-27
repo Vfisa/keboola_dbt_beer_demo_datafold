@@ -9,7 +9,8 @@
 		"vscode": {
 			"extensions": [
 				"innoverio.vscode-dbt-power-user",
-				"ms-python.python"
+				"ms-python.python",
+				"gerane.Theme-Monokai-Cobalt"
 			]
 		}
 	}
