@@ -3,7 +3,7 @@ version: 2
 models:
   - name: beers_with_breweries
     tags:
-      - operations
+      - sales
     meta:
       owner: fisa@keboola.com
     description: "Beers joined with their breweries"
@@ -58,7 +58,7 @@ models:
 
   - name: beers
     tags:
-      - operations
+      - sales
     meta:
       owner: fisa@keboola.com
     description: "Beer List"
@@ -137,7 +137,7 @@ models:
 
   - name: breweries
     tags:
-      - operations
+      - sales
     meta:
       owner: fisa@keboola.com
     columns:
