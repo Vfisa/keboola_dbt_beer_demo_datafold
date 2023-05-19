@@ -158,7 +158,7 @@ models:
     tags:
       - ecommerce
     docs:
-      node_color: "orange"
+      node_color: "gray"
     meta:
       owner: jordan.burger@keboola.com
     columns:
@@ -195,7 +195,7 @@ models:
     tags:
       - finance
     docs:
-      node_color: "orange"
+      node_color: "gold"
     meta:
       owner: fisa@keboola.com
     description: "Beer Sales"
