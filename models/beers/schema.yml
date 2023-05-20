@@ -59,14 +59,12 @@ models:
         description: State of the brewery
 
   - name: beers
-    tags:
-      - sales
     docs:
       node_color: "gray"
     meta:
       owner: fisa@keboola.com
     description: "Beer List"
-    tags: 
+    tags:
       - products
       - sales
       - ecommerce
