@@ -179,6 +179,11 @@ models:
       node_color: "orange"
     meta:
       owner: jordan.burger@keboola.com
+      joins:
+        - join: beers
+          sql_on: ${beers.beer_id} = ${order_lines.beer_id}
+        - join: orders
+          sql_on: ${orders.order_no} = ${order_lines.order_no}
     columns:
       - name: order_no
         meta:
@@ -201,6 +206,13 @@ models:
       node_color: "gold"
     meta:
       owner: fisa@keboola.com
+      joins:
+        - join: orders
+          sql_on: ${orders.order_no} = ${sales.order_no}
+        - join: breweries
+          sql_on: ${breweries.brewery_id} = ${sales.brewery_id}
+        - join: beers
+          sql_on: ${beers.beer_id} = ${sales.beer_id}
     description: "Beer Sales"
     columns:
       - name: beer_id
