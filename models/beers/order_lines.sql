@@ -56,7 +56,14 @@ WITH generated_order_lines AS (
     {% endfor %}
 )
 
-SELECT *
+SELECT
+    "ORDER_NO" AS "ORDER_NO"
+    ,"ORDER_LINE" AS "ORDER_LINE"
+    ,("BEER_ID"::BIGINT)::VARCHAR(255) AS "BEER_ID"
+    ,"QUANTITY" AS "QUANTITY"
+    ,"PRICE" AS "PRICE"
+    ,"CREATED_AT" AS "CREATED_AT"
+    ,"CHANGED_AT" AS "CHANGED_AT"
 FROM generated_order_lines
 
 {% if is_incremental() %}
