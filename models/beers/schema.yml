@@ -8,6 +8,11 @@ models:
       node_color: "orange"
     meta:
       owner: fisa@keboola.com
+      joins:
+        - join: breweries
+          sql_on: ${breweries.brewery_id} = ${beers_with_breweries.brewery_id}
+        - join: beers
+          sql_on: ${beers.beer_id} = ${beers_with_breweries.beer_id}
     description: "Beers joined with their breweries"
     columns:
       - name: brewery_id
