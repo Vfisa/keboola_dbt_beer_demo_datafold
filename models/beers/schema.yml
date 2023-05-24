@@ -173,28 +173,24 @@ models:
               type: count_distinct # metric type
       - name: customer_id
         description: Customer ID
+        meta:
+          metrics:
+            total_customer_count:
+              type: count_distinct
       - name: status
         description: Order status
       - name: created_at
         description: Date created
         meta:
           metrics:
-            most_recent_date_created:
+            date_created:
               type: date
-              sql: "MAX(${CREATED_AT})"
-            first_date_created:
-              type: date
-              sql: "MIN(${CREATED_AT})"
       - name: changed_at
         description: Date changed
         meta:
           metrics:
-            most_recent_date_updated:
+            date_updated:
               type: date
-              sql: "MAX(${CHANGED_AT})"
-            first_date_updated:
-              type: date
-              sql: "MIN(${CHANGED_AT})"
 
   - name: order_lines
     tags:
