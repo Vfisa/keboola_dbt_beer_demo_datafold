@@ -181,20 +181,20 @@ models:
           metrics:
             most_recent_date_created:
               type: date
-              sql: "MAX(${created_at})"
+              sql: "MAX(${CREATED_AT})"
             first_date_created:
               type: date
-              sql: "MIN(${created_at})"
+              sql: "MIN(${CREATED_AT})"
       - name: changed_at
         description: Date changed
         meta:
           metrics:
             most_recent_date_updated:
               type: date
-              sql: "MAX(${changed_at})"
+              sql: "MAX(${CHANGED_AT})"
             first_date_updated:
               type: date
-              sql: "MIN(${changed_at})"
+              sql: "MIN(${CHANGED_AT})"
 
   - name: order_lines
     tags:
