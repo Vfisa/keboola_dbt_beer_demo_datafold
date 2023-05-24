@@ -181,8 +181,16 @@ models:
         description: Order status
       - name: created_at
         description: Date created
+        meta:
+          dimension:
+            type: date
+            time_intervals: ['DAY', 'WEEK', 'MONTH', 'QUARTER', 'DAY_OF_WEEK_INDEX', 'DAY_OF_MONTH_NUM', 'DAY_OF_WEEK_NAME']
       - name: changed_at
         description: Date changed
+        meta:
+          dimension:
+            type: Timestamp
+            time_intervals: ['RAW', 'HOUR', 'DAY', 'WEEK', 'MONTH', 'YEAR',]
 
   - name: order_lines
     tags:
