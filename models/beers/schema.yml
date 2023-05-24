@@ -182,6 +182,8 @@ models:
       joins:
         - join: orders
           sql_on: ${orders.order_no} = ${order_lines.order_no}
+        - join: beers
+          sql_on: ${beers.beer_id} = ${order_lines.order_no}
     columns:
       - name: order_no
         meta:
