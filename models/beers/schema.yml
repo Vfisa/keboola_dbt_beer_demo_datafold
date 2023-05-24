@@ -181,16 +181,8 @@ models:
         description: Order status
       - name: created_at
         description: Date created
-        meta:
-          metrics:
-            date_created:
-              type: date
       - name: changed_at
         description: Date changed
-        meta:
-          metrics:
-            date_updated:
-              type: date
 
   - name: order_lines
     tags:

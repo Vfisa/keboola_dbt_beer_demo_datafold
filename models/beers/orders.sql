@@ -18,17 +18,17 @@ WITH generated_orders AS (
                         {{ yyymmdd() }}
                    ),
                    '{{ order_number }}'
-             )::int                                                            AS order_no,
+             )::int AS order_no,
 
-             {{ randint(123456, 654321) }}                                  AS customer_id,
+             {{ randint(123456, 654321) }} AS customer_id,
 
              {% if order_number is divisibleby 13 %}
-                'PENDING'                                                      AS status,
+                'PENDING' AS status,
              {% else %}
-                'DELIVERED'                                                    AS status,
+                'DELIVERED' AS status,
              {% endif %}
-             DATEADD(Day, -1 * {{ day_ago }}, CURRENT_DATE)                    AS created_at,
-             current_timestamp                                                 AS changed_at
+             DATEADD(Day, -1 * {{ day_ago }}, CURRENT_DATE)::DATE AS created_at,
+             TO_TIMESTAMP(current_timestamp, 'YYYY-MM-DD HH:MI:SS') AS changed_at
 
           {% if not loop.last %}
             UNION ALL
