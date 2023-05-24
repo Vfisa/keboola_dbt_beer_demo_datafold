@@ -180,8 +180,6 @@ models:
     meta:
       owner: jordan.burger@keboola.com
       joins:
-        - join: beers
-          sql_on: ${beers.beer_id} = ${order_lines.beer_id}
         - join: orders
           sql_on: ${orders.order_no} = ${order_lines.order_no}
     columns:
