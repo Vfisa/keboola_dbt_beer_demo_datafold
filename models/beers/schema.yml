@@ -189,7 +189,7 @@ models:
         description: Date changed
         meta:
           dimension:
-            type: Timestamp
+            type: timestamp
             time_intervals: ['RAW', 'HOUR', 'DAY', 'WEEK', 'MONTH', 'YEAR',]
 
   - name: order_lines
