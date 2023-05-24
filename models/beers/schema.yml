@@ -171,6 +171,30 @@ models:
          metrics:
             num_unique_orders: # name of your metric
               type: count_distinct # metric type
+      - name: customer_id
+        description: Customer ID
+      - name: status
+        description: Order status
+      - name: created_at
+        description: Date created
+        meta:
+          metrics:
+            most_recent_date_created:
+              type: date
+              sql: "MAX(${created_at})"
+            first_date_created:
+              type: date
+              sql: "MIN(${created_at})"
+      - name: changed_at
+        description: Date changed
+        meta:
+          metrics:
+            most_recent_date_updated:
+              type: date
+              sql: "MAX(${changed_at})"
+            first_date_updated:
+              type: date
+              sql: "MIN(${changed_at})"
 
   - name: order_lines
     tags:
