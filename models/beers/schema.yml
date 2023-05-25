@@ -120,7 +120,7 @@ models:
               description: "Average Bitterness in International Bitterness Units"
 
       - name: bitterness
-        description: The bitterness category of the beer (based on IBUs)
+        description: The bitterness category of the beer (based on IBUs - Malty or Hoppy)
         meta:
           dimension:
             sql: ${TABLE}.bitterness
@@ -218,6 +218,28 @@ models:
           primary-key: true
         tests:
           - unique
+
+      - name: beer_id
+        description: Beer ID
+
+      - name: quantity
+        description: Units
+
+      - name: price
+        description: Price $
+
+      - name: created_at
+        description: Date created
+        meta:
+          dimension:
+            type: date
+            time_intervals: ['DAY', 'WEEK', 'MONTH', 'QUARTER', 'DAY_OF_WEEK_INDEX', 'DAY_OF_MONTH_NUM', 'DAY_OF_WEEK_NAME']
+      - name: changed_at
+        description: Date changed
+        meta:
+          dimension:
+            type: timestamp
+            time_intervals: ['RAW', 'HOUR', 'DAY', 'WEEK', 'MONTH', 'YEAR',]
 
   - name: sales
     tags:
