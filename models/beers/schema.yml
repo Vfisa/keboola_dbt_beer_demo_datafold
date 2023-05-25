@@ -70,9 +70,17 @@ models:
 
       - name: brewery_city
         description: City of the brewery
+        meta:
+          dimension:
+            sql: ${TABLE}.brewery_city
+            group_label: "Geography"
 
       - name: brewery_state
         description: State of the brewery
+        meta:
+          dimension:
+            sql: ${TABLE}.brewery_state
+            group_label: "Geography"
 
   - name: beers
     docs:
@@ -262,8 +270,11 @@ models:
           metrics:
             Total quantity:
               type: sum
+              group_label: "quantity"
+
             Average quantity:
               type: average
+              group_label: "abv"
 
       - name: price
         description: Price $
@@ -272,15 +283,19 @@ models:
             Total price:
               type: sum
               group_label: "price"
+              format: "usd"
             Average price:
               type: average
               group_label: "price"
+              format: "usd"
             Max price:
               type: max
               group_label: "price"
+              format: "usd"
             Min price:
               type: min
               group_label: "price"
+              format: "usd"
 
       - name: created_at
         description: Date created
