@@ -122,12 +122,15 @@ models:
             Average abv:
               type: average
               description: "Average Alcohol by volume"
+              group_label: "abv"
             Max abv:
               type: max
               description: "Maximum Alcohol by volume"
+              group_label: "abv"
             Min abv:
               type: min
               description: "Minimum Alcohol by volume"
+              group_label: "abv"
 
       - name: ibu
         meta:
@@ -135,12 +138,15 @@ models:
             Average ibu:
               type: average
               description: "Average Bitterness in International Bitterness Units"
+              group_label: "ibu"
             Max ibu:
               type: max
               description: "Maximum Bitterness in International Bitterness Units"
+              group_label: "ibu"
             Min ibu:
               type: min
               description: "Minimum Bitterness in International Bitterness Units"
+              group_label: "ibu"
 
       - name: bitterness
         description: The bitterness category of the beer (based on IBUs - Malty or Hoppy)
@@ -265,12 +271,16 @@ models:
           metrics:
             Total price:
               type: sum
+              group_label: "price"
             Average price:
               type: average
+              group_label: "price"
             Max price:
               type: max
+              group_label: "price"
             Min price:
               type: min
+              group_label: "price"
 
       - name: created_at
         description: Date created
@@ -318,20 +328,26 @@ models:
           metrics:
             Average abv:
               type: average
+              group_label: "abv"
             Max abv:
               type: max
+              group_label: "abv"
             Min abv:
               type: min
+              group_label: "abv"
 
       - name: ibu
         meta:
           metrics:
             Average ibu:
               type: average
+              group_label: "ibu"
             Max ibu:
               type: max
+              group_label: "ibu"
             Min ibu:
               type: min
+              group_label: "ibu"
         description: International Bitterness Unit
 
       - name: bitterness
