@@ -212,16 +212,13 @@ models:
           - relationships:
               to: ref('orders')
               field: order_no
-
       - name: order_line
         meta:
           primary-key: true
         tests:
           - unique
-
       - name: beer_id
         description: Beer ID
-
       - name: quantity
         description: Units
         meta:
@@ -230,7 +227,6 @@ models:
               type: sum
             Average quantity:
               type: average
-
       - name: price
         description: Price $
         meta:
@@ -243,7 +239,6 @@ models:
               type: max
             Min price:
               type: min
-
       - name: created_at
         description: Date created
         meta:
@@ -281,7 +276,23 @@ models:
         description: The style of the beer (IPA, Porter, etc)
       - name: abv
         description: Alcohol by volume
+        meta:
+          metrics:
+            Average abv:
+              type: average
+            Max abv:
+              type: max
+            Min abv:
+              type: min
       - name: ibu
+        meta:
+          metrics:
+            Average ibu:
+              type: average
+            Max ibu:
+              type: max
+            Min ibu:
+              type: min
         description: International Bitterness Unit
       - name: bitterness
         description: The bitterness category of the beer (based on IBUs)
