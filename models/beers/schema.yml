@@ -224,9 +224,25 @@ models:
 
       - name: quantity
         description: Units
+        meta:
+          metrics:
+            Total quantity:
+              type: sum
+            Average quantity:
+              type: average
 
       - name: price
         description: Price $
+        meta:
+          metrics:
+            Total price:
+              type: sum
+            Average price:
+              type: average
+            Max price:
+              type: max
+            Min price:
+              type: min
 
       - name: created_at
         description: Date created
