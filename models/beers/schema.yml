@@ -194,6 +194,29 @@ models:
             num_unique_breweries: # name of your metric
               type: count_distinct # metric type
 
+      - name: brewery_name
+        meta:
+          dimension:
+            sql: ${TABLE}.brewery_name
+
+      - name: brewery_city
+        meta:
+          dimension:
+            sql: ${TABLE}.brewery_city
+            group_label: "Geography"
+
+      - name: brewery_state
+        meta:
+          dimension:
+            sql: ${TABLE}.brewery_state
+            group_label: "Geography"
+
+      - name: brewery_country
+        meta:
+          dimension:
+            sql: ${TABLE}.brewery_country
+            group_label: "Geography"
+
   - name: orders
     tags:
       - ecommerce
