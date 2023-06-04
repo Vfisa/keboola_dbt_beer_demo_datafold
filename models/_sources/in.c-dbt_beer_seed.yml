@@ -8,7 +8,7 @@ sources:
       database: 'KEBOOLA_3603'
       schema: in.c-dbt_beer_seed
       loaded_at_field: '"_timestamp"'
-      loader: "keboola.ex-google-drive/474825624"
+      loader: keboola.ex-google-drive/474825624
       tables:
         - name: seed_beers
           quoting:
